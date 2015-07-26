@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+  <div id="page">
+    <div id="pin_view_laywer">
+      <div class="pin-view">
+        <div class="pin-view-wrapper">
+          <!-- main part: image, comment -->
+	  <div class="main-part">
+	    <div class="image-piece piece">
+
+	      <div class="tool-bar">
+	        <div class="title">{{ page.title }}</div>
+		<div class="right-part">
+		  <div class="share-btns">
+		    <span>Share</span>
+		    <a href="/">share urls</a>
+		  </div>
+		</div>
+	      </div>
+
+	      <div class="main-image">
+	        <div class="image-holder">
+		  <img src="{{ page.imageurl }}">
+		</div>
+	      </div>
+
+	      <div class="tool-bar-bottom">
+	        <div class="description">
+		  <div class="text-meta">
+	              {{ content }}
+		  </div>
+		</div>
+	      </div>
+
+	    </div>
+
+	    <div class="info-piece piece">
+	      <div class="pin_view_add_comment">
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES * * */
+                    var disqus_shortname = 'comicsdaozhanginfo';
+                    
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>	      
+	      </div>
+	    </div>
+	    <div class="comment-piece"></div>
+	  </div>
+          <!-- side part: scrollbar -->
+	  <div class="side-part">
+	    <div class="board-piece piece">
+	      <div class="board-info">
+		<a href="/" title="qiwihui" class="img x">
+		  <img src="/static/img/logo.png" class="avt">
+	        </a>
+		<a href="/" class="name x">{{ page.category }}</a>
+		<div class="sub">qiwihui</div>
+	      </div>
+	      <div class="board-pins cst-scrollbar">
+	        <div id="board_pins_waterfall" style="height: 995px;">
+		  <!-- images waterfall -->
+		  {% for img in site.static_files %}
+                    {% if img.path contains "bonefish" or img.path contains "daily" %}
+		    <a href="{{ img.path | replace: 'static/bonefish/','' | replace: 'static/daily/', '' | replace: '.png', '' }}" class="cell x layer-view" style="position: relative;">
+	              <img src="{{ img.path }}" width="78">
+	              <div class="cover"></div>
+	            </a>
+		    {% endif %}
+		  {% endfor %}
+		</div>
+		<div class="loading"><img src="/static/img/loading.gif"><span>Loading...</span></div>
+	      </div>
+	    </div>
+	  </div>
+
+         </div><!-- end of pin-view-warpper -->
+      </div><!-- end of pin-view -->
+
+      <div class="pin-view-arrows">
+	{% if page.previous %}
+	  <a style="visibility: visible; position: fixed; right: 0px;" class="next x layer-view" href="{{ page.next.url }}"></a>
+	{% endif %}
+	{% if page.next %}
+	  <a style="visibility: visible; position: fixed; left: 0px;" class="prev x layer-view" href="{{ page.previous.url }}"></a>
+	{% endif %}
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
