@@ -13,11 +13,10 @@
 	    <div class="image-piece piece">
 
 	      <div class="tool-bar">
-	        <div class="title">{{ page.title }}</div>
+		<div class="title"><strong>{{ page.title }}</strong></div>
 		<div class="right-part">
 		  <div class="share-btns">
-		    <span>Share</span>
-		    <a href="/">share urls</a>
+		    {% include sharebtns.html %}
 		  </div>
 		</div>
 	      </div>
@@ -84,6 +83,7 @@
 	    </div>
 	    <!-- logo qrcode -->
 	    <div class="pin-view-promo">
+		<div class="promo-info">微信公众号（ideas42）</div>
 	        <img src="/static/img/logo-qrcode.jpg" width="278">
             </div>
 	  </div>
@@ -96,6 +96,7 @@
 	  <a style="visibility: visible; position: fixed; right: 0px;" class="next x layer-view" href="{{ page.next.url }}"></a>
 	{% endif %}
 	{% if page.next %}
+	{{ page.next.title }}
 	  <a style="visibility: visible; position: fixed; left: 0px;" class="prev x layer-view" href="{{ page.previous.url }}"></a>
 	{% endif %}
       </div>

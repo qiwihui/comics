@@ -13089,6 +13089,15 @@ h1#thin_logo {
     background: #fff
 }
 
+.pin-view .pin-view-promo .promo-info {
+    background: #fff;
+    padding: 13px 13px;
+    display: block;
+    position: relative;
+    font-size: 15px;
+    border-bottom: 1px solid #EDEDED;
+}
+
 #pin_view_add_comment {
     margin: 0 -20px;
     padding: 14px 20px 14px 80px;
