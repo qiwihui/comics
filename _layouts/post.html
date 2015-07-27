@@ -5,7 +5,7 @@
 
 <body>
   <div id="page">
-    <div id="pin_view_laywer">
+    <div id="pin_view_layer">
       <div class="pin-view">
         <div class="pin-view-wrapper">
           <!-- main part: image, comment -->
@@ -68,7 +68,7 @@
 	      </div>
 	      <div class="board-pins cst-scrollbar">
 	        <div id="board_pins_waterfall" style="height: 995px;">
-		  <!-- images waterfall -->
+		  <!-- images waterfall --><!--
 		  {% for img in site.static_files %}
                     {% if img.path contains "bonefish" or img.path contains "daily" %}
 		    <a href="{{ img.path | replace: 'static/bonefish/','' | replace: 'static/daily/', '' | replace: '.png', '' }}" class="cell x layer-view" style="position: relative;">
@@ -77,6 +77,7 @@
 	            </a>
 		    {% endif %}
 		  {% endfor %}
+                  --> 
 		</div>
 		<div class="loading"><img src="/static/img/loading.gif"><span>Loading...</span></div>
 	      </div>

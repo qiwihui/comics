@@ -13672,7 +13672,7 @@ h1#thin_logo {
     background: rgba(229, 229, 229, .95);
     z-index: 99994;
     overflow: auto;
-    padding-top: 40px
+ /* padding-top: 40px */
 }
 
 .menu-bar-at-side #pin_view_layer {
