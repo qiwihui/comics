@@ -13716,7 +13716,7 @@ h1#thin_logo {
     left: 0;
     top: 50%;
     margin-top: -50px;
-    background: url(/img/pin_view_arrows.png) -160px 0 no-repeat
+    background: url(/static/img/pin_view_arrows.png) -160px 0 no-repeat
 }
 
 #pin_view_layer .pin-view-arrows a.prev:hover {

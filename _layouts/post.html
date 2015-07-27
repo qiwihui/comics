@@ -93,11 +93,10 @@
 
       <div class="pin-view-arrows">
 	{% if page.previous %}
-	  <a style="visibility: visible; position: fixed; right: 0px;" class="next x layer-view" href="{{ page.next.url }}"></a>
+	<a style="visibility: visible; position: fixed; right: 0px;" class="next x layer-view" href="{{ page.previous.url }}"></a>
 	{% endif %}
 	{% if page.next %}
-	{{ page.next.title }}
-	  <a style="visibility: visible; position: fixed; left: 0px;" class="prev x layer-view" href="{{ page.previous.url }}"></a>
+	<a style="visibility: visible; position: fixed; left: 0px;" class="prev x layer-view" href="{{ page.next.url }}"></a>
 	{% endif %}
       </div>
     </div>
